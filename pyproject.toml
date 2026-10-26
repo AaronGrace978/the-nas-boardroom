@@ -1,0 +1,27 @@
+[project]
+name = "nas-boardroom"
+version = "0.1.0"
+description = "Five on-device experts deliberate, vote, and record why a NAS acted."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "AaronGrace978" }]
+keywords = ["nas", "ugos", "ugreen", "agents"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+nas-boardroom = "boardroom.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["boardroom*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
